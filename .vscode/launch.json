@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run on Kubernetes",
+      "type": "cloudcode.kubernetes",
+      "request": "launch",
+      "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+      "watch": true,
+      "cleanUp": true,
+      "portForward": true,
+      "imageRegistry": "gcr.io/sanctuary-280392"
+    },
+    {
+      "name": "Attach to Kubernetes pod (pub)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "localRoot": "${workspaceFolder}/src/pub",
+      "remoteRoot": "/app",
+      "podSelector": {
+        "io.kompose.service": "pub"
+      }
+    },
+    {
+      "name": "Attach to Kubernetes pod (sub)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "localRoot": "${workspaceFolder}/src/sub",
+      "remoteRoot": "/app",
+      "podSelector": {
+        "io.kompose.service": "sub"
+      }
+    },
+    {
+      "name": "Attach to Kubernetes pod (zeus)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "localRoot": "${workspaceFolder}/src/zeus",
+      "remoteRoot": "/app",
+      "podSelector": {
+        "io.kompose.service": "zeus"
+      }
+    }
+  ]
+}

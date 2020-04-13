@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.21.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: pub
+  name: pub
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      io.kompose.service: pub
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.21.0 ()
+      creationTimestamp: null
+      labels:
+        io.kompose.service: pub
+    spec:
+      containers:
+      - args:
+        - python
+        - main.py
+        - --ip
+        - zeus
+        image: pub
+        imagePullPolicy: ""
+        name: pub
+        resources: {}
+        tty: true
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
