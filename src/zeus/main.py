@@ -2,6 +2,7 @@ import zmq
 
 def main ():
 
+    print("Zeus starting...")
     # Start child threads
     ctx = zmq.Context()
     subscriber = ctx.socket(zmq.XSUB)
