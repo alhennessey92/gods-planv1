@@ -12,7 +12,7 @@ def main ():
     publisher = ctx.socket(zmq.XPUB)
     print("Going to bind to pub")
     publisher.bind("tcp://*:6000")
-
+    print("ZEUS: Connections made, ready to process messages...")
     zmq.proxy(subscriber, publisher)
 
     # We never get here…

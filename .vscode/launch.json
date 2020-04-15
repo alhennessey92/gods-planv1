@@ -12,30 +12,6 @@
       "imageRegistry": "gcr.io/sanctuary-280392"
     },
     {
-      "name": "Attach to Kubernetes pod (pub)",
-      "type": "cloudcode.kubernetes",
-      "request": "attach",
-      "language": "Python",
-      "debugPort": 3000,
-      "localRoot": "${workspaceFolder}/src/pub",
-      "remoteRoot": "/app",
-      "podSelector": {
-        "io.kompose.service": "pub"
-      }
-    },
-    {
-      "name": "Attach to Kubernetes pod (sub)",
-      "type": "cloudcode.kubernetes",
-      "request": "attach",
-      "language": "Python",
-      "debugPort": 3000,
-      "localRoot": "${workspaceFolder}/src/sub",
-      "remoteRoot": "/app",
-      "podSelector": {
-        "io.kompose.service": "sub"
-      }
-    },
-    {
       "name": "Attach to Kubernetes pod (zeus)",
       "type": "cloudcode.kubernetes",
       "request": "attach",
@@ -45,6 +21,30 @@
       "remoteRoot": "/app",
       "podSelector": {
         "io.kompose.service": "zeus"
+      }
+    },
+    {
+      "name": "Attach to Kubernetes pod (hermes)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "localRoot": "${workspaceFolder}/src/hermes",
+      "remoteRoot": "/app",
+      "podSelector": {
+        "io.kompose.service": "hermes"
+      }
+    },
+    {
+      "name": "Attach to Kubernetes pod (ares)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "localRoot": "${workspaceFolder}/src/ares",
+      "remoteRoot": "/app",
+      "podSelector": {
+        "io.kompose.service": "ares"
       }
     }
   ]

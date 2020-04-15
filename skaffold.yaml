@@ -5,10 +5,10 @@ build:
     sha256: {}
   # defines where to find the code at build time and where to push the resulting image
   artifacts:
-  - image: pub
-    context: src/pub
-  - image: sub
-    context: src/sub
+  - image: hermes
+    context: src/hermes
+  - image: ares
+    context: src/ares
   - image: zeus
     context: src/zeus
 # defines the Kubernetes manifests to deploy on each run

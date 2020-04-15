@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.21.0 ()
   creationTimestamp: null
   labels:
-    io.kompose.service: pub
-  name: pub
+    io.kompose.service: hermes
+  name: hermes
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: pub
+      io.kompose.service: hermes
   strategy: {}
   template:
     metadata:
@@ -21,7 +21,7 @@ spec:
         kompose.version: 1.21.0 ()
       creationTimestamp: null
       labels:
-        io.kompose.service: pub
+        io.kompose.service: hermes
     spec:
       containers:
       - args:
@@ -29,9 +29,9 @@ spec:
         - main.py
         - --ip
         - zeus
-        image: pub
+        image: hermes
         imagePullPolicy: ""
-        name: pub
+        name: hermes
         resources: {}
         tty: true
       restartPolicy: Always
